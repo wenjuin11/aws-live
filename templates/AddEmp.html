@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <style>
+	 @import url("http://fonts.googleapis.com/css2/family=Poppins:wght@200;300;400;500;600;700&display=swap");
+	 
+	 * {
+	      margin: 0;
+		  padding 0;
+		  box-sizing; border-box;
+		  font-family: "Poppins", sans-serif;
+		  }
+		  
+		  body {
+		        /* height: 100wh;*/
+				display: flex;
+				justify-content: center;
+				align-items: 10px;
+				background: linear-gradient(135deg, #70elf5. #ffd194):
+		  }
+		  
+		  .container {
+		        max-width: 700px;
+				width: 100%;
+				background-color: #fff;
+				padding: 25px 30px;
+				border-radius: 5px;
+				box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+		  }
+		  
+		  .container .title::before {
+		        content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				height: 3px;
+				width: 250 px;
+				border-radius: 5px;
+				background: linear-gradient(135deg, #70elf5, #ffd194);
+		  }
+		  
+		  .content form .employee-details {
+		       display: flex;
+			   flex-wrap: wrap;
+			   justify-content: space-between;
+			   margin: 20px 0 12px 0;
+		   }
+		   
+		   form .employee-details .input-box {
+		       margin-buttom: 15px;
+			   width: calc(100% / 2 - 20px);
+		   }
+		   
+		   form .input-box span.details {
+		       display: block;
+			   font-weight: 500;
+			   margin-buttom: 5px;
+           }
+		   
+		   form .input-box-image span.details {
+		       display: block;
+			   font-weight: 500;
+			   margin-buttom: 5px;
+           }
+		  
+		  .employee-details .input-box input {
+		       height: 45px;
+			   width: 100%;
+			   outline: none:
+			   font-size: 16px;
+			   border-radius: 5px;
+			   padding-left: 15px;
+			   border-bottom-width: 2px;
+			   transition: all 0.3s ease;
+           }
+		  
+		   .employee-details .input-box-image input {
+		       height: 45px;
+			   width: 100%;
+			   outline: none:
+			   font-size: 16px;
+			   border-radius: 5px;
+			   padding-left: 15px;
+			   border-bottom-width: 2px;
+			   transition: all 0.3s ease;
+           }
+		  
+		   .employee-details .input-box input:focus,
+		   .employee-details .input-box input:valid {
+		       border-color: #70elf5;
+		    }
+			
+			.content .button {
+			   height:45px;
+			   margin: 35px 0;
+			 }
+			 
+			 .content button input {
+			   height: 100%;
+			   width: 100%;
+			   border-radius: 5px;
+			   border: none;
+			   color: #fff;
+			   font-size: 18px;
+			   font-weight: 500;
+			   letter-spacing: 1px;
+			   cursor: pointer;
+			   transition: all 0.3 ease;
+			   background: linear-gradient(135deg, #70elf5, #ffd194);
+			 }
+			 
+			.content .button input:hover {
+			    background: linear-gradient(135deg, #70elf5, #ffd194);
+			 }
+			 
+		    .button1 {
+			    height: 45px;
+				margin: 35px 0;
+			}
+			
+			.button1 input {
+			   height: 100%;
+			   width: 100%;
+			   border-radius: 5px;
+			   border: none;
+			   color: #fff;
+			   font-size: 18px;
+			   font-weight: 500;
+			   letter-spacing: 1px;
+			   cursor: pointer;
+			   transition: all 0.3 ease;
+			   background: linear-gradient(135deg, #74e);bd5, #acb6e5);
+			   
+			 }
+		  
+		     .button1 input:hover {
+		        background: linear-gradient(135deg, #74e);bd5, #acb6e5);
+			   
+			 }
+		     
+			 #pic {
+			    /* float: left; */
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				margin-left: 50px:
+			 }
+			 
+			 a:link,
+			 a:visited {
+			    background-color: white;
+				color: black;
+				border: 2px solid #acb6e5;
+				padding: 10px 20px;
+				text-align:center;
+				text-decoration: none;
+				display: inline-block;
+			 }
+			
+			  a:hover,
+			  a:active {
+			    background-color: #acb6e5;
+				color: white;
+			  }
+			  
+			  </style>
+			  <title>Add Employee Information</title>
+</head>
+
+<body>
+    <div class="container">
+	
+
+		<div class="title">Employee Database</div>
+        <div class="content">
+		
+		<body bgcolor="lightgrey">
+
+			<form action="/addemp" autocomplete="on" method = "GET" enctype="multipart/form-data">
+			  <div class="button" type="submit" formaction="/getemp" method="GET">
+			  <input type="submit" value="Get Employee Information">
+			  </div>
+			</form>
+			
+			<form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">	
+			  <div class="employee-details">
+			  <div class="input-box-image">  
+			    <span class= "details"></span>
+				
+			<img id="pic" src=https://cdn.pixabay.com/photo/2016/08/09/17/avatar-1577909_960_720.png" alt="employee-image">
+			<input type=file name="emp_image_file" oninput="pic.src=window.URL.createObjectURL(this.files[0])" required>
+			<br>
+			</div>
+			
+			<input type="hidden" name="emp_id" placeholder= "Enter ID" required>
+			
+			<div class="input-box">
+			<span class="details">First Name:</span>
+			<input type="text" name="first_name" placeholder= "Enter First Name" required>
+			</div>
+			
+			<div class="input-box">
+			<span class="details">Last Name:</span>
+			<input type="text" name="last_name" placeholder= "Enter Last Name" required>
+			</div>
+			
+			<div class="input-box">
+			<span class="details">Primary Skills:</span>
+			<input type="text" name="pri_skill" placeholder= "Enter Primary Skills" required>
+			</div>
+			
+			<div class="input-box">
+			<span class="details">Location:</span>
+			<input type="text" name="location" placeholder= "Enter location" required>
+			</div>
+			
+			<div class="input-box">
+			<span class="details">Job:</span>
+			<input type="text" name="job" placeholder= "Enter Job" required>
+			</div>
+			
+			<div class="input-box">
+			<span class="details">Salary:</span>
+			<input type="text" name="salary" placeholder= "Enter Salary" required>
+			</div>
+			    <script>
+			    var validate = function (e) {
+				   var t = e.value;
+				   e.value = (t.indexOf(".") >= 0) ? (t.substn(0,t.indexOf(".")) + t.substr(t.indexOf("."), 3)) : t;
+				</script>
+
+			<div class="input-box">
+			<span class="details">Email:</span>
+			<input type="text" name="email" placeholder= "Enter Email" required>
+			</div>	
+			
+			<div class="input-box">
+			<span class="details">Phone No:</span>
+			<input type="text" name="phone_no" placeholder= "Enter Phone No" required>
+			</div>
+				   
+			<input type="hidden: name="reg_datetime" value="">
+			
+		</div>
+		
+		
+	<b>Benefit:</b>
+	<br>
+	<div id="checkboxgroup">
+	        <input type="checkbox" name="benefit" value="Insurance Medical Care" checked>Insurance Medical Care<br>
+			<input type="checkbox" name="benefit" value="Trainning Program" checked>Trainning Program<br>
+			<input type="checkbox" name="benefit" value="Free transporation" checked>Free transporation<br>
+	</div>		  
+		
+	<script>
+        var group_ = (el, callback) => {
+            el.forEach((checkbox) => {
+                  callback(checkbox)
+            }}
+        
+        group_(document.getElemetsByName('benefit'), (item) => {
+           
+            item.onclick = (e) => {
+			group_(document.getElemetsByName('benefit'), (item) => {
+           
+                 item.checked = false;
+			}}
+			e.target.checked = true;
+		}
+	    </script>
+		
+		<div vlass="button1">
+		   <input type="submit" value="Update Database">
+		</div>
+		
+	</form>
+	
+    <a href="/about" target="-blank">About Us</a>
+	</div>
+	</div>
+</html>			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
