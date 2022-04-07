@@ -35,24 +35,6 @@ def about():
 @app.route("/getemp", methods=['GET','POST'])
 def GetEmp():
     return render_template('GetEmp.html', GetEmp=GetEmp)
-
-def show_image(bucket);
-    s3_client = boto3.client('s3')
-    public_urls = []
-    
-    #check whether the emp_id inside the image_url
-    emp_id = request.form['emp_id']
-
-    try:
-
-        for item in s3_client.list_objects(Bucket=bucket)['Contents']:
-        presigned_url = s3_client.generate_presigned__url('get_object', params = {'Bucket': bucket, 'key': item['key']}, ExpiresIn = 100)
-        if emp_id in presigned_url:
-        public_urls.append(presigned_url)
-        except Exception as e:
-        pass
-        # print("[INFO] : The contents inside show_image = ", public_urls)
-        return public_urls
         
 @app.route("/fetchdata", methods=['GET','POST'])
 def fetchdata();
